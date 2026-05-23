@@ -40,7 +40,7 @@ public partial class MainWindow : Window
         WindLabel = this.FindControl<TextBlock>("WindLabel");
         GetWeatherButton = this.FindControl<Button>("GetWeatherButton");
 
-        // 🖱️ ВАЖНО: Подписываемся на событие клика кнопки
+        //  Подписываемся на событие клика кнопки
         if (GetWeatherButton != null)
             GetWeatherButton.Click += async (s, e) => await GetWeather();
     }
@@ -81,7 +81,7 @@ public partial class MainWindow : Window
             
             //  Формат URL
             // units=metric - температура в Цельсиях
-            // lang=ru - описание на русском
+         
             string url = $"https://api.openweathermap.org/data/2.5/weather?q={city}&units=metric&lang=ru&appid={apiKey}";
             
             var response = await client.GetAsync(url);  // await = не блокируем UI
